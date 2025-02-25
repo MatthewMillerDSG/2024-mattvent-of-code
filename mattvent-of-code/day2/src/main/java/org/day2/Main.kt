@@ -13,8 +13,6 @@ fun main() {
     lines.forEach({ line ->
         if ((isDecreasing(line) || isIncreasing(line)) && smallDifference(line))
             count++
-        else
-            println(line + " not good")
     })
 
     println("number of increasing or decreasing: ${count}")
