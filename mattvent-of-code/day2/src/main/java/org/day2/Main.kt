@@ -10,22 +10,15 @@ fun main() {
     // Part 1 - find number of safe rows by:
     //      * row values are all increasing or all decreasing
     //      * adjacent values are different by at least 1 and at most 3
-    //answer: 383
     lines.forEach({ line ->
-        if ((isDecreasing(line)) && smallDifference(line)) {
-            print(line)
-            println(" decreasing")
+        if ((isDecreasing(line) || isIncreasing(line)) && smallDifference(line))
             count++
-        } else if (isIncreasing(line) && smallDifference(line)) {
-            print(line)
-            println(" increasing")
-                count++
-            }
         else
             println(line + " not good")
     })
 
     println("number of increasing or decreasing: ${count}")
+    //part 1 answer: 383
 }
 
 fun isIncreasing(line: List<String>): Boolean {
